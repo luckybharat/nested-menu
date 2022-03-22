@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+.container {
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 16px;
+  height: 64px;
+  background-color: #7b1fa2;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.brand {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.menu {
+  display: block;
+  z-index: 999999;
 }
+.menu li {
+  display: inline-block;
+  position: relative;
+}
+.menu li.dropdown:hover > .submenu {
+  display: block;
+}
+.menu li a {
+  display: block;
+  padding: 12px 8px;
+  background: #ccc;
+}
+.menu li.dropdown > a::after {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 8px;
+  font-size: 10px;
+}
+
+.menu li a:hover {
+  background: grey;
+}
+
+.menu .submenu {
+  display: none;
+}
+.submenu {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  left: 0px;
+  list-style-type: none;
+  display: block;
+  width: 200px;
+  z-index: 9;
+}
+.submenu li {
+  display: block;
+}
+.submenu li a {
+  display: block;
+  background: #999;
+  color: #fff;
+  padding: 8px 6px;
+  margin-bottom: 1px;
+}
+.menu .submenu > li.dropdown:hover > .submenu {
+  display: block;
+}
+
+.menu .submenu .submenu {
+  position: absolute;
+  left: 200px;
+  top: 0px;
+}
+
+.submenu li.dropdown > a:after {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 8px;
+  font-size: 10px;
+}
+
